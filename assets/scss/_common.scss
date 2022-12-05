@@ -1,0 +1,116 @@
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+	transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-active,
+.layout-enter,
+.layout-leave-active {
+	opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: $transition;
+	opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+	transition: $transition;
+	opacity: 0;
+}
+
+.checkboxes-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 2.2rem;
+
+	@include media-breakpoint-down(md) {
+		font-size: 1.8rem;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+
+			@include media-breakpoint-down(md) {
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
+
+	.icon-holder {
+		width: 2.4rem;
+		display: flex;
+		margin-right: 2rem;
+
+		@include media-breakpoint-down(md) {
+			margin-right: 2.4rem;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.swiper-nav {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 4.2rem 0 0 0;
+	list-style: none;
+
+	@include media-breakpoint-down(md) {
+		padding-top: 2rem;
+	}
+
+	li {
+		display: flex;
+
+		&:first-child {
+			margin-right: 5.6rem;
+
+			@include media-breakpoint-down(md) {
+				margin-right: 3.8rem;
+			}
+		}
+	}
+
+	.btn-swiper {
+		padding: 0;
+		background: none;
+		border: none;
+
+		.icon-holder {
+			display: flex;
+
+			@include media-breakpoint-down(md) {
+				max-width: 3rem;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&.btn-prev {
+			transform: rotate(-180deg);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.6;
+			cursor: default;
+		}
+	}
+}
