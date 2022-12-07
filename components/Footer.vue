@@ -76,7 +76,7 @@ export default {
 				},
 				{
 					title: "TERMS AND CONDITIONS",
-					route: "/"
+					route: "/terms-and-condition"
 				}
 			]
 		};

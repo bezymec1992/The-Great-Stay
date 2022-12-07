@@ -7,10 +7,24 @@
 
 			<nav class="main-nav">
 				<ul class="main-menu">
-					<li v-for="(item, index) in menu" :key="index" @click="closeMenu">
+					<li v-for="(item) in menuMb" :key="item.id" class="d-lg-none" @click="closeMenu" >
 						<nuxt-link :to="item.to">{{ item.title }}</nuxt-link>
 					</li>
+					<li v-for="(item, index) in menuDesk" :key="index" class="d-none d-lg-block" @click="closeMenu">
+						<nuxt-link :to="item.to">{{ item.title }}</nuxt-link>
+					</li>
+					
+					<div class="d-lg-none terms-policy">
+						<li @click="closeMenu">
+							<nuxt-link to="/terms-and-condition">Terms and conditions</nuxt-link>
+						</li>
+						<li @click="closeMenu">
+							<nuxt-link to="/privacy-policy">Privacy policy</nuxt-link>
+						</li>
+					</div>
+					
 				</ul>
+				
 			</nav>
 			<a class="open-menu d-lg-none" :class="{ open: menuOpen }" href="#" @click.prevent="toggleMenu">
 				<span></span>
@@ -27,22 +41,50 @@ export default {
 	data() {
 		return {
 			menuOpen: false,
-			menu: [
+			menuDesk: [
+				
 				{
 					title: "impact",
-					to: "/modules"
+					to: "/contact"
 				},
 				{
 					title: "Your place",
-					to: "/crm-cms"
+					to: "/your-place"
 				},
 				{
-					title: "for customers",
-					to: "/app"
+					title: "For customers",
+					to: "/contact"
 				},
 				{
 					title: "Contact",
 					to: "/contact"
+				}
+			],
+			menuMb: [
+				{
+					title: "Home",
+					to: "/",
+					id: 11
+				},
+				{
+					title: "impact",
+					to: "/contact",
+					id: 12
+				},
+				{
+					title: "Your place",
+					to: "/your-place",
+					id: 13
+				},
+				{
+					title: "For customers",
+					to: "/contact",
+					id: 14
+				},
+				{
+					title: "Contact",
+					to: "/contact",
+					id: 15
 				}
 			]
 		};
@@ -60,7 +102,7 @@ export default {
 		closeMenu() {
 			this.menuOpen = false;
 			document.body.classList.remove("menu-opened");
-		}
+		},
 	}
 };
 </script>
@@ -69,8 +111,9 @@ export default {
 .header {
 	padding-top: 3.8rem;
 	padding-bottom: 3.8rem;
-	z-index: 100;
+	// z-index: 1011111;
 	color: white;
+	border-bottom: 1px solid black;
 	@include media-breakpoint-down(lg) {
 		padding-top: 3.2rem;
 		padding-bottom: 3.2rem;
@@ -82,7 +125,6 @@ export default {
 	}
 
 	@include media-breakpoint-up(lg) {
-
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -91,7 +133,23 @@ export default {
 
 	.header-white-bg & {
 		background: white;
+		color: black;
+		border-bottom: 1px solid gray;
 	}
+	.header-transpar {
+		background: transparent;
+		color: white;
+		
+		border-bottom: 1px solid rgb(224, 224, 224) !important;
+		.main-menu {
+			// color: black;
+		}
+		.menu-opened a{
+			color: rgb(250, 8, 8) !important;
+			// color: black !important;
+		}
+	}
+	
 
 	> .container {
 		display: flex;
@@ -103,12 +161,13 @@ export default {
 		font-weight: 400;
 		font-size: 2.4rem;
 		text-transform: uppercase;
+		z-index: 1000;
 	}
 
 	.main-nav {
 		text-transform: uppercase;
 		transition: $transition;
-
+		z-index: 1000;
 		@include media-breakpoint-down(lg) {
 			position: fixed;
 			top: 0;
@@ -116,7 +175,7 @@ export default {
 			width: 100%;
 			height: 100%;
 			display: flex;
-			padding: 10.3rem 3rem 8rem 3rem;
+			padding: 9.8rem 0rem 8rem 0rem;
 			background: $white;
 			opacity: 0;
 			visibility: hidden;
@@ -129,6 +188,7 @@ export default {
 				opacity: 1;
 				visibility: visible;
 				pointer-events: all;
+				
 			}
 		}
 
@@ -136,8 +196,9 @@ export default {
 			margin: 0;
 			padding: 0;
 			list-style: none;
-
+			
 			@include media-breakpoint-down(lg) {
+				border-top: 1px solid #848484;
 				width: 100%;
 				overflow: auto;
 				text-align: center;
@@ -148,17 +209,26 @@ export default {
 			}
 
 			li {
+				@include media-breakpoint-down(lg) {
+					font-size: 26px;
+					line-height: 31px;
+				}
+				&:first-child{
+					@include media-breakpoint-down(lg) {
+						margin-top: 10rem;
+					}
+				}
 				&:not(:last-child) {
 					@include media-breakpoint-up(lg) {
-						margin-right: 4rem;
+						margin-left: 4rem;
 					}
 
 					@include media-breakpoint-up(xxl) {
-						margin-right: 7rem;
+						margin-left: 7rem;
 					}
 
 					@include media-breakpoint-down(lg) {
-						margin-bottom: 8.1rem;
+						margin-bottom: 4.8rem;
 					}
 				}
 			}
@@ -237,6 +307,15 @@ export default {
 					transform: rotate(-45deg);
 				}
 			}
+		}
+	}
+	.terms-policy {
+		
+		li {
+			font-size: 18px !important;
+			line-height: 22px;
+			text-transform: uppercase;
+			opacity: 0.5;
 		}
 	}
 }
