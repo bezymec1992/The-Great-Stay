@@ -11,6 +11,12 @@
 							
 						</div>
 					</div> -->
+					<div class="sc">
+						<a href="#col" >
+							<img class="d-none d-md-block"  src="@/assets/img/sc.svg" alt="">
+							<img class="d-md-none" src="@/assets/img/sc-black.svg" alt="">
+						</a>
+					</div>
 					<div class="col">
 						<div class="background"></div>
 						<!-- <picture class="img-holder">
@@ -24,7 +30,7 @@
 		
 
 		<TwoCols>
-			<div class="gray-back">
+			<div class="gray-back" id="col">
 				<div class="woman">
 					<div class="container">
 						<div class="row">
@@ -463,6 +469,19 @@ export default {
 				font-size: 4.8rem;
 				margin-bottom: 3rem;
 				line-height: 5rem;
+			}
+		}
+		.sc {
+			position: absolute;
+			top: 49rem;
+			left: 50%;
+			transform: translate(50%);
+			z-index: 10000000;
+			width: 0rem;
+			padding: 0;
+			@include media-breakpoint-down(md) {
+				top: 62rem;
+				left: 49%;
 			}
 		}
 

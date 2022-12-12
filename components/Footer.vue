@@ -58,12 +58,16 @@ export default {
 				},
 				{
 					title: "impact",
-					route: "/app"
+					route: "/impact"
 				},
 				
 				{
 					title: "Your place",
-					route: "/contact"
+					route: "/your-place"
+				},
+				{
+					title: "For customer",
+					route: "/for-customer"
 				},
 				{
 					title: "contact",

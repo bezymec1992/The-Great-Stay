@@ -101,11 +101,11 @@ h5 {
 
 .h2 {
 	margin-bottom: 4rem;
-	font-size: 8.4rem;
-	line-height: 1.11;
+	font-size: 8rem;
+	line-height: 90px;
 
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 		font-size: 5rem;
 		line-height: 1.2;
 	}

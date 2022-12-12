@@ -45,7 +45,7 @@ export default {
 				
 				{
 					title: "impact",
-					to: "/contact"
+					to: "/impact"
 				},
 				{
 					title: "Your place",
@@ -53,7 +53,7 @@ export default {
 				},
 				{
 					title: "For customers",
-					to: "/contact"
+					to: "/for-customer"
 				},
 				{
 					title: "Contact",
@@ -68,7 +68,7 @@ export default {
 				},
 				{
 					title: "impact",
-					to: "/contact",
+					to: "/impact",
 					id: 12
 				},
 				{
@@ -78,7 +78,7 @@ export default {
 				},
 				{
 					title: "For customers",
-					to: "/contact",
+					to: "/for-customer",
 					id: 14
 				},
 				{
@@ -109,14 +109,14 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-	padding-top: 3.8rem;
-	padding-bottom: 3.8rem;
-	// z-index: 1011111;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	z-index: 1011111;
 	color: white;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid white;
 	@include media-breakpoint-down(lg) {
-		padding-top: 3.2rem;
-		padding-bottom: 3.2rem;
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
 		color: black;
 	}
 
@@ -136,19 +136,7 @@ export default {
 		color: black;
 		border-bottom: 1px solid gray;
 	}
-	.header-transpar {
-		background: transparent;
-		color: white;
-		
-		border-bottom: 1px solid rgb(224, 224, 224) !important;
-		.main-menu {
-			// color: black;
-		}
-		.menu-opened a{
-			color: rgb(250, 8, 8) !important;
-			// color: black !important;
-		}
-	}
+	
 	
 
 	> .container {
@@ -175,7 +163,7 @@ export default {
 			width: 100%;
 			height: 100%;
 			display: flex;
-			padding: 9.8rem 0rem 8rem 0rem;
+			padding: 8.8rem 0rem 8rem 0rem;
 			background: $white;
 			opacity: 0;
 			visibility: hidden;
@@ -319,4 +307,20 @@ export default {
 		}
 	}
 }
+.header-transpar {
+		.header {
+			color: white;
+			@include media-breakpoint-down(md) {
+				background: transparent ;
+			}
+		}
+	}
+	.menu-opened{
+		.header {
+			color: black;
+		}
+			.main-menu {
+				color: black;
+			}
+		}
 </style>
