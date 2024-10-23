@@ -5,7 +5,7 @@
 				<div class="intr-wrapp">
                 
                     <h1>At your service whenever you need us</h1>
-					<a href="#col">
+					<a href="#Great">
 						<img src="@/assets/img/sc.svg" alt="">
 					</a>
 					<!-- <div class="col-md-8">
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		</Intro>
-        <TwoCols class="two-cols-2 two-cols-2-white">
+        <TwoCols id="Great" class="two-cols-2 two-cols-2-white">
 			<div class="container">
 				<div class="row flex-column-reverse flex-md-row">
 					<div class="col-md-4 d-md-flex align-items-md-start flex-md-column justify-content-between">
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        <TwoCols>
+        <TwoCols class="bg-white">
 			<div class="phones">
 				<div class="container">
 					<div class="row">
@@ -162,7 +162,117 @@
 				</div>
 			</div>
 		</TwoCols>
-        <Contact/>
+
+		<div class="one-col">
+			<div class="container">
+				<span class="span1">services  and ordering</span>
+				<h2 class="h2">Ordering was never this easy. At the pool from your room</h2>
+				<div class="items d-flex">
+					<div class="item d-flex align-items-center">
+						<img src="@/assets/img/done.svg" alt="">
+						<p>Order to your room</p>
+					</div>
+					<div class="item d-flex align-items-center">
+						<img src="@/assets/img/done.svg" alt="">
+						<p>Restaurant orders</p>
+					</div>
+					<div class="item d-flex align-items-center">
+						<img src="@/assets/img/done.svg" alt="">
+						<p>Orders at bars & other places</p>
+					</div>
+					
+				</div>
+				<picture >
+					<source srcset="@/assets/img/tan-m.png" media="(max-width: 600px)" width="100%" height="auto"/>
+					<img src="@/assets/img/tan-d.jpg" alt="Control system for your business" width="100%" height="auto"/>
+				</picture>
+				
+			</div>
+		</div>
+
+		<TwoCols class="two-pones">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<span class="phones-span">
+							discover more
+						</span>
+					</div>
+					<div class="col-md-8">
+						<h2 class="h2">Useful features</h2>
+						<div class="row">
+							<div class="col-md-6">
+								<picture >
+									<source srcset="@/assets/img/mob1-m.png" media="(max-width: 600px)" width="100%" height="auto"/>
+									<img src="@/assets/img/mob1-d.png" alt="Control system for your business" width="100%" height="auto"/>
+								</picture>
+								<h3>Reservation</h3>
+								<p class="first-p">Book a place your really like just in a few clicks.</p>
+								
+							</div>
+							<div class="col-md-6">
+								<picture >
+									<source srcset="@/assets/img/mob2-m.png" media="(max-width: 600px)" width="100%" height="auto"/>
+									<img src="@/assets/img/mob2-d.png" alt="Control system for your business" width="100%" height="auto"/>
+								</picture>
+								<h3>Payment</h3>
+								<p>Pay immediatelly or just add to your bill and pay later.</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</TwoCols>
+
+		<div class="one-col one-col2">
+			<div class="one-wrap">
+				<div class="container">
+					<span class="span1">Gamification</span>
+					<h2 class="h2">Enjoy your stay and get rewarded!</h2>
+					<span class="span2">Collect points and be a part of the Great Stay loyalty program. </span>
+					<p>Program goals: <br class="d-md-none"/>
+						<span class="span3">
+						receive bonuses for your stay;
+						</span>
+						<span class="span3">
+						exchange your points for additional service.
+						</span>
+					</p>
+					<picture >
+						<source srcset="@/assets/img/mult-m.jpg" media="(max-width: 600px)" width="100%" height="auto"/>
+						<img src="@/assets/img/mult-d.jpg" alt="Control system for your business" width="100%" height="auto"/>
+					</picture>
+					
+				</div>
+			</div>
+		</div>
+
+		<TwoCols class="two-pones two-pones2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<span class="phones-span">
+							friends & partners
+						</span>
+					</div>
+					<div class="col-md-8">
+						<h2 class="h2">Our friends & partners want to serve you <br/> too!</h2>
+						<picture >
+							<source srcset="@/assets/img/phones2-m.jpg" media="(max-width: 600px)" width="100%" height="auto"/>
+							<img src="@/assets/img/phones2-d.jpg" alt="Control system for your business" width="100%" height="auto"/>
+						</picture>
+						<span class="phones-span2">
+							Discover all the places and services they want to provide!
+						</span>
+					</div>
+				</div>
+			</div>
+		</TwoCols>
+		<div class="contact-wrap">
+			<Contact/>
+		</div>
+        
     </div>
     
 </template>
@@ -194,7 +304,6 @@ export default {
 .intro {
         background: #024751;
 		min-height: 838px;
-        // margin-bottom: 20rem;
         overflow: hidden;
 		padding-bottom: 13.2rem !important;
         @include media-breakpoint-down(md) {
@@ -223,10 +332,6 @@ export default {
                 }
             }
 			
-			.intr-img-wrap {
-				// margin-left: -2rem;
-				// margin-right: -2rem;
-			}
             .intr-img {
                 position: absolute;
                 top: 15rem;
@@ -336,17 +441,19 @@ export default {
         }
     }
 }
-
+.bg-white {
+	background: white;
+}
 .phones {
 		background: #F2F2F2;
 		// padding-top: 20rem;
-        padding-bottom: 18rem;
+        padding-bottom: 10rem;
         border-radius: 0 0 4rem 4rem;
-        margin-bottom: 16.2rem;
+        // margin-bottom: 16.2rem;
 		@include media-breakpoint-down(lg) {
-			padding-bottom: 5rem;
-            border-radius: 0 0 2rem 2rem;
-            margin-bottom: 8rem;
+			padding-bottom: 3.5rem;
+            border-radius: 0 0 3rem 3rem;
+            // margin-bottom: 8rem;
 		}
 		.two-col-h2 {
 			margin-bottom: 6rem !important;
@@ -418,5 +525,177 @@ export default {
 				margin-top: 5.5rem;
 			}
 		}
+}
+.one-col {
+		padding-bottom: 18rem;
+        background: #ffffff;
+        padding-top: 16rem;
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 8rem;
+            padding-top: 8rem;
+		}
+		.span1 {
+			font-size: 24px;
+			line-height: 29px;
+			text-transform: uppercase;
+			@include media-breakpoint-down(md) {
+				font-size: 18px;
+				line-height: 22px;
+			}
+		}
+        img {
+            border-radius: 3rem;
+            @include media-breakpoint-down(md) {
+                border-radius: 2rem;
+            }
+        }
+		.h2 {
+			margin-top: 3rem;
+			font-size: 80px;
+			line-height: 90px;
+			max-width: 81rem;
+			@include media-breakpoint-down(md) {
+				font-size: 42px;
+				line-height: 50px;
+			}
+		}
+		.items {
+			margin-bottom: 6rem;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 5rem;
+				flex-direction: column;
+			}
+			.item {
+				margin-right: 4rem;
+				@include media-breakpoint-down(md) {
+					&:not(:last-child) {
+						margin-bottom: 2.4rem;
+					}
+					
+					margin-right: 0;
+				}
+				p {
+					margin-bottom: 0;
+					margin-left: 1.5rem;
+					opacity: 0.6;
+				}
+			}
+		}
+		
+		
+		
+		
+		
+}
+
+.two-pones {
+	background: white;
+	padding-bottom: 11rem;
+	margin-bottom: 18rem;
+	border-radius: 0 0 4rem 4rem;
+	
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 8rem;
+		padding-bottom: 5.2rem;
+		border-radius: 0 0 3rem 3rem;
 	}
+	.h2 {
+		@include media-breakpoint-down(md) {
+			margin-top: 2rem;
+		}
+	}
+	h3 {
+		font-size: 42px;
+		line-height: 50px;
+		margin-top: 4rem;
+		@include media-breakpoint-down(md) {
+			font-size: 30px;
+			line-height: 36px;
+			margin-top: 3.2rem;
+		}
+	}
+	.first-p {
+		margin-bottom: 5.2rem;
+	}
+	
+	p {
+		font-size: 24px;
+		line-height: 29px;
+		opacity: 0.6;
+		@include media-breakpoint-down(md) {
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+}
+
+.one-col2 {
+	background: white;
+	padding-top: 0;
+	padding-bottom: 0;
+	
+	.one-wrap {
+		background: #F5F5F5;
+		border-radius: 0 0 4rem 4rem;
+		padding-bottom: 16rem;
+		@include media-breakpoint-down(md) {
+			padding-bottom: 5.2rem;
+		}
+	}
+	.span2 {
+		font-size: 30px;
+		line-height: 40px;
+		@include media-breakpoint-down(md) {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+	.h2 {
+		@include media-breakpoint-up(md) {
+			margin-bottom: 8rem;
+		}
+	}
+	p {
+		font-size: 20px;
+		line-height: 24px;	
+		text-transform: uppercase;
+		margin-bottom: 8rem;
+		margin-top: 2.6rem;
+		@include media-breakpoint-down(md) {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 5.2rem;
+		}
+		.span3 {
+			font-size: 20px;
+			line-height: 28px;
+			opacity: 0.6;
+			text-transform: lowercase;
+			margin-left: 1rem;
+			@include media-breakpoint-down(md) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+.two-pones2 {
+	margin-bottom: 0;
+	padding-top: 18rem;
+	padding-bottom: 18rem;
+	border-radius: 0;
+	@include media-breakpoint-down(md) {
+		padding-bottom: 8rem;
+		padding-top: 8rem;
+	}
+	picture img {
+		margin-bottom: 6rem;
+		@include media-breakpoint-down(md) {
+			margin-bottom: 5.2rem;
+		}
+	}
+}
+
+.contact-wrap {
+	background: white;
+}
 </style>

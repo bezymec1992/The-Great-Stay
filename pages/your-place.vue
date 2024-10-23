@@ -6,7 +6,7 @@
 				<div class="intr-wrapp">
                 
                     <h1>Provide the best experience for your customers</h1>
-					<a href="#col">
+					<a href="#Great">
 						<img src="@/assets/img/sc.svg" alt="">
 					</a>
 					<!-- <div class="col-md-8">
@@ -30,7 +30,7 @@
 		</Intro>
         </div>
 
-        <div class="one-col" id="col">
+        <div id="Great" class="one-col" >
 			<div class="container">
 				<span class="span1">best for your hotel</span>
 				<h2 class="h2">Easy <br class="d-md-none"/> managing and <br/> administration</h2>
